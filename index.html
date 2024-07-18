@@ -1,12 +1,3 @@
-<?php
-
-$version = trim(file_get_contents("version"));
-
-if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
-  $version = time();
-}
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,7 +7,7 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
 
   <title>I Seminário Fluminense de Reforma Tributária</title>
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="https://www.aemerj.org.br/templates/wt_blank_free/favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -26,9 +17,45 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- PreLoad Images -->
+  <link rel="preload" href="assets/img/profile/alexandre-opn.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/aristeu-opn.png" as="image">
+  <link rel="preload" href="assets/img/profile/carlos-opn.png" as="image">
+  <link rel="preload" href="assets/img/profile/cesar-opn.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/fabiano-opn.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/fernando-opn.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/flavia-opn.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/joao-opn.png" as="image">
+  <link rel="preload" href="assets/img/profile/leonardo-opn.jpg" as="image">
+
+  <link rel="preload" href="assets/img/profile/marilia-pn1.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/jonathas-pn1.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/thompson-pn1.jpg" as="image">
+
+  <link rel="preload" href="assets/img/profile/andrea-pn2.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/fabio-pn2.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/guilherme-pn2.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/kleber-pn2.jpg" as="image">
+
+  <link rel="preload" href="assets/img/profile/andre-tb1.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/gustavo-tb1.png" as="image">
+  <link rel="preload" href="assets/img/profile/leonardo-tb1.jpg" as="image">
+
+  <link rel="preload" href="assets/img/profile/aline-tb2.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/juan-tb2.png" as="image">
+  <link rel="preload" href="assets/img/profile/ricardo-tb2.jpg" as="image">
+
+  <link rel="preload" href="assets/img/profile/carlos-tb3.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/jose-tb3.jpeg" as="image">
+  <!-- <link rel="preload" href="assets/img/profile/" as="image"> -->
+
+  <link rel="preload" href="assets/img/profile/alberto-tb4.jpg" as="image">
+  <link rel="preload" href="assets/img/profile/nylfson-tb4.jpg" as="image">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css?v=1.0.1" rel="stylesheet">
+  <link href="assets/css/style.css?v=1.0.2" rel="stylesheet">
   <style>
     .text-limit {
       display: -webkit-box;
@@ -45,18 +72,6 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
       opacity: 1;
     }
   </style>
-  <!-- Google tag (gtag.js) -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZWV0HCS70"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'G-VZWV0HCS70');
-  </script> -->
   <!-- =======================================================
   * Template Name: Techie
   * Updated: Mar 10 2023 with Bootstrap v5.2.3
@@ -68,17 +83,8 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
 
 <body class="mx-0 px-0">
   <!-- ======= Header ======= -->
-  <!-- <header id="header" class="align-items-center mx-auto py-1">
-    <div class="container d-flex justify-content-between">
-      <a href="https://niteroi.rj.gov.br/" title="Site da Prefeitura de Niterói" target="_blank"><img src="assets/img/logo-2024_163x60.png" alt="Prefeitura de Niterói"></a>
-      <a href="http://www.aemerj.org.br/" title="Site da AEMERJ" target="_blank"><img src="assets/img/aemerj.png" alt="AEMERJ — Associação Estadual de Municípios - RJ"></a>
-      <img src="assets/img/forum.svg" alt="Fórum Fluminense de Secretários e Secretárias de Finanças">
-    </div>
-  </header> -->
-  <!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center mt-5 p-1" ;>
+  <section id="hero" class="d-flex align-items-center mt-5 p-1">
     <div class="container-fluid mx-0 py-0" data-aos="fade-up">
       <div class="justify-content-center d-flex">
         <div class="col-xl-9 order-2 order-lg-2 hero-img mb-2" data-aos="zoom-in" data-aos-delay="150">
@@ -119,20 +125,85 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
     <!-- ======= Features Section ======= -->
     <section id="features" class="features pt-0 pb-0">
       <div class="container mx-auto px-0" data-aos="fade-up">
-        <!-- <div class="mx-auto px-auto" data-aos="fade-up"> -->
         <div class="section-title">
-          <p class="description text-xl-left  mb-5 py-5">&emsp;&emsp;O <b>I Seminário Fluminense de Reforma Tributária</b> nasce da preocupação dos municípios fluminenses com os impactos da Reforma Tributária em todo o Estado do Rio de Janeiro. É certo que a Reforma Tributária terá repercussões diversas na dinâmica da economia nacional, alterando sensivelmente o cenário de alocação de recursos pelos setores produtivos e modificando o cenário fiscal dos Entes Federados. Fato é que, embora muitos Estados e Municípios sejam beneficiados, alguns perderão recursos ou, no mínimo, terão suas curvas de crescimento de arrecadação prejudicadas.
-            <br>
-            <br>
-            &emsp;&emsp;Nesse sentido, o Seminário surge como uma oportunidade para que Administrações Tributárias, representantes do Setor Produtivo, Acadêmicos e representantes da Advocacia Tributária reúnam esforços no sentido de compreender os desafios e as oportunidades que a nova tributação sobre o consumo no país nos trará.
-          </p>
+          <div class="d-flex flex-column gap-4 description text-xl-left mt-0 mb-5 py-4">
+            <p class="p-0">O <b>I Seminário Fluminense de Reforma Tributária</b> nasce da preocupação dos municípios fluminenses com os impactos da Reforma Tributária em todo o Estado do Rio de Janeiro. É certo que a Reforma Tributária terá repercussões diversas na dinâmica da economia nacional, alterando sensivelmente o cenário de alocação de recursos pelos setores produtivos e modificando o cenário fiscal dos Entes Federados. Fato é que, embora muitos Estados e Municípios sejam beneficiados, alguns perderão recursos ou, no mínimo, terão suas curvas de crescimento de arrecadação prejudicadas.</p>
+            <p class="p-0">Nesse sentido, o Seminário surge como uma oportunidade para que Administrações Tributárias, representantes do Setor Produtivo, Acadêmicos e representantes da Advocacia Tributária reúnam esforços no sentido de compreender os desafios e as oportunidades que a nova tributação sobre o consumo no país nos trará.</p>
+          </div>
           <div class="title-schedule mx-auto">
             <h2 class="pt-3 my-0 pb-2">PROGRAMAÇÃO - MANHÃ</h2>
           </div>
-          <div id="opening">
+
+          <div id="opening" class="position-relative">
             <h4 class="mt-0 py-5 mb-0">9h - Abertura</h4>
             <p class="pb-5">Dispositivo de honra formado por Secretários de Fazenda e autoridades</p>
+
+            <!-- Slider main container -->
+            <div class="swiper aos-init aos-animate px-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="d-lg-flex d-none swiper-wrapper flex-row mb-5">
+                <!-- Slides -->
+                <div class="swiper-slide mt-0 pb-3" role="group" aria-label="xxx / yyy">
+                  <img src="assets/img/profile/alexandre-opn.jpg" alt="Alexandre da Silva Pinto — Secretário de Fazenda de Magé">
+                  <h3>Alexandre da Silva Pinto </h3>
+                  <h4>Secretário de Fazenda de Magé</h4>
+                </div>
+
+                <div class="swiper-slide mt-0 pb-3" role="group" aria-label="xxx / yyy">
+                  <img src="assets/img/profile/aristeu-opn.png" alt="Aristeu de Oliveira Netto — Secretário de São João da Barra">
+                  <h3>Aristeu de Oliveira Netto</h3>
+                  <h4>Secretário de Fazenda de São João da Barra </h4>
+                </div>
+
+                <div class="swiper-slide mt-0 pb-3" role="group" aria-label="xxx / yyy">
+                  <img src="assets/img/profile/carlos-opn.png" alt="Carlos Soutinho de Mello — Secretário De Fazenda de Duque de Caxias">
+                  <h3>Carlos Soutinho de Mello </h3>
+                  <h4>Secretário De Fazenda de Duque de Caxias</h4>
+                </div>
+
+                <div class="swiper-slide mt-0 pb-3" role="group" aria-label="xxx / yyy">
+                  <img src="assets/img/profile/flavia-opn.jpg" alt="Flavia Guimarães - Secretária de Fazenda de Valença">
+                  <h3>Flávia Guimarães Silva</h3>
+                  <h4>Secretária de Fazenda de Valença</h4>
+                </div>
+                
+                <div class="swiper-slide mt-0 pb-3" role="group" aria-label="xxx / yyy">
+                  <img src="assets/img/profile/joao-opn.png" alt="João José de Almeida Neto — Secretário de Fazenda de Itaguaí">
+                  <h3>João José de Almeida Neto</h3>
+                  <h4>Secretário de Fazenda de Itaguaí</h4>
+                </div>
+                
+                <div class="swiper-slide mt-0 pb-3" role="group" aria-label="xxx / yyy">
+                  <img src="assets/img/profile/leonardo-opn.jpg" alt="Leonardo Ramos — Secretário de Finanças de Barra Mansa">
+                  <h3>Leonardo Ramos</h3>
+                  <h4>Secretário de Finanças de Barra Mansa</h4>
+                </div>
+
+                <div class="swiper-slide mt-0 pb-3" role="group" aria-label="xxx / yyy">
+                  <img src="assets/img/profile/cesar-opn.jpg" alt="Cesar Augusto Barbiero — Subsecretário de Fazenda de Maricá">
+                  <h3>Cesar Augusto Barbiero</h3>
+                  <h4>Subsecretário de Fazenda de Maricá</h4>
+                </div>
+
+                <div class="swiper-slide mt-0 pb-3" role="group" aria-label="xxx / yyy">
+                  <img src="assets/img/profile/fabiano-opn.jpg" alt="Fabiano Claussen Latini – Secretário de Fazenda de Teresópolis">
+                  <h3>Fabiano Claussen Latini</h3>
+                  <h4>Secretário de Fazenda de Teresópolis</h4>
+                </div>
+
+                <div class="swiper-slide mt-0 pb-3" role="group" aria-label="xxx / yyy">
+                  <img src="assets/img/profile/fernando-opn.jpg" alt="Fernando de Castro Barbosa - Secretário de Fazenda de Sapucaia">
+                  <h3>Fernando de Castro Barbosa</h3>
+                  <h4>Secretário de Fazenda de Sapucaia</h4>
+                </div>
+              </div>
+
+              <div class="swiper-pagination"></div>
+
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
           </div>
+
           <div id="panel1" class="panel py-5">
             <h4 class="py-5 mt-0 px-5">10h - Painel 1 - Situação fiscal dos municípios fluminenses e do Estado do Rio de Janeiro no contexto da reforma tributária</h4>
             <p>Dados da situação fiscal do ERJ e de seus Municípios, colocando em perspectiva a Reforma
@@ -145,9 +216,7 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="pn11" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/jonathas-pn1.jpg" as="image">
                   <img src="assets/img/profile/jonathas-pn1.jpg" alt="Foto de Jonathas Goulart" class="profile">
-                  
                   <div class="accordion-body">Economista, especialista em Modelos Macroeconômicos e Políticas Públicas, com mais de 10 anos de experiência. Mestre em Economia pela Universidade do Estado do Rio de Janeiro, com especialização em Modelagem Econômica na US Naval Academy. Foi professor de Macro e Microeconomia da UERJ e atualmente é economista chefe da FIRJAN.</div>
                 </div>
               </div>
@@ -158,9 +227,7 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="pn12" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/marilia-pn1.jpg" as="image">
                   <img src="assets/img/profile/marilia-pn1.jpg" alt="Foto de Marília Ortiz" class="profile">
-
                   <div class="accordion-body pb-5">Mestre em Administração Pública e Governo pela Fundação Getúlio Vargas (FGV), graduada em Gestão de Políticas Públicas pela Universidade de São Paulo (USP), pós-graduanda em Finanças Públicas e Auditoria (UFRJ), com curso executivo para líderes públicos na School of International and Public Affairs da Universidade de Columbia (NY).</div>
                 </div>
               </div>
@@ -171,9 +238,7 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="pn13" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/thompson-pn1.jpg" as="image">
                   <img src="assets/img/profile/thompson-pn1.jpg" alt="Foto de Thompson Lemos" class="profile">
-
                   <div class="accordion-body">Formado em Ciências Econômicas pela Universidade Federal Fluminense, é Auditor Fiscal da Receita Estadual desde 1990. Desde então, já desempenhou diversas funções de gestão e assessoria na Sefaz-RJ, como Subsecretário de Receita, Superintendente de Fiscalização, Assessor do Gabinete, Auditor Tributário na Junta de Revisão Fiscal e Superintendente de Planejamento, Avaliação e Modernização. Possui mestrado e doutorado pela Universidade do Estado do Rio de Janeiro.</div>
                 </div>
               </div>
@@ -191,7 +256,6 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="pn21" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/andrea-pn2.jpg" as="image">
                   <img src="assets/img/profile/andrea-pn2.jpg" alt="Foto de Andrea Senko" class="profile">
                   <div class="accordion-body">Mestre em Administração Pública (FGV/EBAPE/RJ) e graduada em Economia (PUC/RJ), com pós-graduação em Políticas Públicas e em Finanças pela UFRJ e IAG/PUC, respectivamente. Em 2013, participou do Programa Minerva da George Washington University. Sua carreira profissional teve início no setor privado, e desde 2010 atua no setor público. Trabalhou na Secretaria de Estado de Fazenda do Rio de Janeiro, na Secretaria de Fazenda de Minas Gerais e no Ministério da Fazenda. Assumiu a Secretaria Municipal de Fazenda e Planejamento da Prefeitura do Rio de Janeiro em abril de 2022. Desde junho de 2023 é diretora técnica da ABRASF – Associação Brasileira das Secretarias de Finanças das Capitais.</div>
                 </div>
@@ -203,7 +267,6 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="pn22" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/fabio-pn2.jpg" as="image">
                   <img src="assets/img/profile/fabio-pn2.jpg" alt="Foto de Fábio Verbicario" class="profile">
                   <div class="accordion-body">Possui graduação em Ciência da Computação pela Universidade Federal Fluminense (UFF), com mais de 20 anos de experiência em projetos de TI. Auditor Fiscal do Estado do Rio de Janeiro, exerceu o cargo de assessor do Subsecretário da Receita no enfrentamento da crise de 2016 na Sefaz/RJ. Atualmente no cargo de superintendente de Automatização da Fiscalização.</div>
                 </div>
@@ -215,7 +278,6 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="pn23" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/kleber-pn2.jpg" as="image">
                   <img src="assets/img/profile/kleber-pn2.jpg" alt="Foto de Kleber Pacheco" class="profile">
                   <div class="accordion-body">Economista, com mestrado pela UFF e doutorado pela UERJ. É sócio da FINANCE Análise e Consultoria Econômica e consultor econômico da FNP. Atua há mais de 15 anos na área de finanças públicas e possui diversas publicações (artigos, capítulos de livros, apresentações, produções técnicas) sobre tributação, federalismo fiscal e política fiscal.</div>
                 </div>
@@ -238,7 +300,6 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="pn25" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/guilherme-pn2.jpg" as="image">
                   <img src="assets/img/profile/guilherme-pn2.jpg" alt="Foto de Guilherme Merces" class="profile">
                   <div class="accordion-body">Economista e mestre em economia pela UERJ, com formação executiva pelas universidades de Oxford – Reino Unido, Columbia – EUA e INSEAD – França. Foi Secretário de Fazenda e Presidente do Fundo de Previdência do Estado do Rio de Janeiro, Economista-chefe da Confederação Nacional de Comércio, Serviços e Turismo (CNC) e da Federação das Indústrias do Estado do Rio de Janeiro – (FIRJAN). É sócio e consultor da Future Tank.</div>
                 </div>
@@ -260,7 +321,6 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="tb11" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/gustavo-tb1.png" as="image">
                   <img src="assets/img/profile/gustavo-tb1.png" alt="Foto de Gustavo da Gama" class="profile">
                   <div class="accordion-body">Possui graduação, mestrado e doutorado em Direito pela UERJ. É Procurador do Município do Rio de Janeiro e Professor de Direito Tributário e Financeiro da UERJ. É advogado tributarista e autor de livros e artigos na área do Direito Tributário. </div>
                 </div>
@@ -272,8 +332,7 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="tb12" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/andre-tb1.jpg" as="image">
-                  <img src="assets/img/profile/andre-tb1.jpg" alt="Foto de Andre Pires" class="profile">
+                  <img src="assets/img/profile/andre-tb1.jpg" alt="Foto de André Luis" class="profile">
                   <div class="accordion-body">Graduado em Engenharia Civil pela UniFOA e em Direito pela UFF. Exerceu o cargo de Fiscal de Tributos em Volta Redonda/RJ no período de 1995 a 2002. É Auditor Fiscal da Receita Municipal de Niterói desde 2002, ocupando a função de representante fazendário no Conselho de Contribuintes do município a partir de 2019</div>
                 </div>
               </div>
@@ -283,7 +342,6 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="tb13" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/leonardo-tb1.jpg" as="image">
                   <img src="assets/img/profile/leonardo-tb1.jpg" alt="Foto de Leonardo Godoi" class="profile">
                   <div class="accordion-body">Mestre em Direito Tributário do Instituto Brasileiro de Estudos Tributário (IBET). Pós-graduado em Direito Tributário pelo IBET e em Direito Público e Privado, com ênfase em Direito Tributário, pelo Instituto Superior do Ministério Público do Estado do Rio de Janeiro (ISMP/RJ). Professor de Direito Tributário do IBET e dos cursos de Gestão Tributária e Fiscalização Tributária Municipal do Instituto Brasileiro de Administração Municipal (IBAM). Conteúdista do Curso de Gestão Tributária Municipal publicado pela Escola Nacional da Administração Pública (ENAP, vinculada ao Ministério do Planejamento, Desenvolvimento e Gestão). Diretor e membro fundador da Associação dos Auditores e Fiscais Tributários Municipais do Estado do Rio de Janeiro - AFIMERJ. Auditor Fiscal Municipal do Município de Japeri/RJ e Membro titular da Comissão Municipal de Assuntos Tributários (COMAT).</div>
                 </div>
@@ -301,19 +359,17 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="tb21" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/aline-tb2.jpg" as="image">
                   <img src="assets/img/profile/aline-tb2.jpg" alt="Foto de Aline Krieger" class="profile">
-                  <div class="accordion-body">Advogada, contadora, fundadora do IG e canal de YouTube @tributarioatual, mestre em Direito Financeiro e Tributário pela UERJ, especialista em Direito Tributário pelo IBET, com ampla experiência em planejamentos tributários, consultivo e contencioso tributário, consultoria fiscal e societária. É professora na UERJ, FGV e IBMEC, autora de livros jurídicos, Conselheira Fiscal do Projeto Grael, Coordenadora Acadêmica da Comissão de Direito Tributário da OAB/RJ Barra e membro da ABDF.</div>
+                  <div class="accordion-body">Advogada, contadora, fundadora do IG e canal de YouTube @tributarioatual, mestre em Direito Financeiro e Tributário pela UERJ, especialista em Direito Tributário pelo IBET, com ampla experiência em planejamentos tributários, consultivo e contencioso tributário, consultoria fiscal e societária. É professora na UERJ, FGV e IBMEC, autora de livros jurídicos, Conselheira Fiscal do Projeto Grael, Coordenadora Acadêmica da Comissão de Direito Tributário da OAB/RJ Barra e membro da ABDF</div>
                 </div>
               </div>
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button px-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tb22" aria-expanded="false" aria-controls="tb22">
-                  Juan Rodrigues  &#8212; Subsecretário de Receita de Niterói - Auditor Fiscal de Niterói
+                  Juan Rodrigues &#8212; Subsecretário de Receita de Niterói - Auditor Fiscal de Niterói
                   </button>
                 </h2>
                 <div id="tb22" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/juan-tb2.png" as="image">
                   <img src="assets/img/profile/juan-tb2.png" alt="Foto de Juan Rodrigues" class="profile">
                   <div class="accordion-body">Mestre em Direito Público pela Universidade Estadual do Rio de Janeiro, com linha de pesquisa em Finanças Públicas, Tributação e Desenvolvimento Econômico e Especialista em Direito Fiscal pela PUC-RJ. Juan atuou como Analista da Fazenda Estadual – SEFAZ-RJ – entre outubro de 2013 e março de 2017. Ingressou como servidor público municipal de carreira no cargo de Auditor Fiscal da Receita Municipal – SMF Niterói em março de 2017. Antes de assumir a subsecretaria de Receita foi Coordenador de Tributação.
                   </div>
@@ -326,7 +382,6 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="tb23" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/ricardo-tb2.jpg" as="image">
                   <img src="assets/img/profile/ricardo-tb2.jpg" alt="Foto de Ricardo Almeida" class="profile">
                   <div class="accordion-body">Possui graduação e mestrado em Direito pela UERJ. É Procurador do Município do Rio de Janeiro, membro da Escola de Magistratura do Estado do Rio de Janeiro (EMERJ), Assessor Jurídico da Associação Brasileira das Secretarias das Finanças das Capitais (ABRASF) e Advogado. Autor de artigos e capítulos de coletâneas e livros sobre Direito Constitucional, Administrativo, Processo Civil, Financeiro, Tributário.</div>
                 </div>
@@ -346,8 +401,7 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="tb31" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/guilherme-tb3.jpeg" as="image">
-                  <img src="assets/img/profile/guilherme-tb3.jpeg" alt="Foto de Guilherme Costa" class="profile">
+                  <img src="assets/img/profile/jose-tb3.jpeg" alt="Foto de José Guilherme" class="profile">
                   <div class="accordion-body">Diretor Jurídico Tributário e Corporativo na Vibra Energia (reporte ao VP Jurídico) Mestrando em Finanças, Tributação e Desenvolvimento na UERJ (2024.1) Sócio do Projeto Tributário em Jogo Membro GDT, ABDF e CEAT OAB-RJ.</div>
                 </div>
               </div>
@@ -358,7 +412,6 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="tb32" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/carlos-tb3.jpg" as="image">
                   <img src="assets/img/profile/carlos-tb3.jpg" alt="Foto de Carlos Mauro" class="profile">
                   <div class="accordion-body">Graduado em Comunicação Social/Jornalismo pela UFF e em Direito pela Universidade Estácio de Sá. Mestrando em Filosofia pela UFRJ. Foi Técnico do Tesouro Nacional (Secretaria da Receita Federal) e há mais de 20 anos é Auditor Fiscal da Secretaria de Fazenda de Niterói, onde ocupa o cargo de Presidente do Conselho de Contribuintes. </div>
                 </div>
@@ -370,9 +423,8 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="tb33" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/avatar-placeholder.png" as="image">
-                  <img src="assets/img/profile/avatar-placeholder.png" alt="Placeholder" class="profile">
-                  <div class="accordion-body">Texto para terceiro item</div>
+                  <img src="assets/img/profile/avatar-placeholder.png" alt="" class="profile">
+                  <div class="accordion-body"></div>
                 </div>
               </div>
             </div>
@@ -389,23 +441,22 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="tb41" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/kleber-pn2.jpg" as="image">
                   <img src="assets/img/profile/kleber-pn2.jpg" alt="Foto de Kleber Pacheco" class="profile">
                   <div class="accordion-body">Economista, com mestrado pela UFF e doutorado pela UERJ. É sócio da FINANCE Análise e Consultoria Econômica e consultor econômico da FNP. Atua há mais de 15 anos na área de finanças públicas e possui diversas publicações (artigos, capítulos de livros, apresentações, produções técnicas) sobre tributação, federalismo fiscal e política fiscal.
                   </div>
                 </div>
               </div>
-              <!-- <div class="accordion-item">
+              <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button px-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tb42" aria-expanded="false" aria-controls="tb42">
-                    Representante CNM
+                    Nylfson Borges &#8212; Auditor Fiscal do Município de Niterói
                   </button>
                 </h2>
                 <div id="tb42" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <img src="assets/img/profile/avatar-placeholder.png" alt="" class="profile">
-                  <div class="accordion-body">Texto para o segundo item</div>
+                  <img src="assets/img/profile/nylfson-tb4.jpg" alt="" class="profile">
+                  <div class="accordion-body">Formado em Ciências Navais pela Escola Naval e pós graduado em Ciências Militares pela Escola de Aperfeiçoamento do Exército Brasileiro. Auditor Fiscal do Município de Niterói. Ex-subsecretário de Receita da Fazenda Municipal de Niterói.</div>
                 </div>
-              </div> -->
+              </div>
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button px-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tb43" aria-expanded="false" aria-controls="tb43">
@@ -413,8 +464,7 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
                   </button>
                 </h2>
                 <div id="tb43" class="accordion-collapse collapse" data-bs-parent=".section-title">
-                  <link rel="preload" href="assets/img/profile/alberto-tb4.jpg" as="image">
-                  <img src="assets/img/profile/alberto-tb4.jpg" alt="" class="profile">
+                  <img src="assets/img/profile/alberto-tb4.jpg" alt="Foto de Alberto Macedo" class="profile">
                   <div class="accordion-body">Doutor em Direito Econômico, Financeiro e Tributário pela USP; MBA em Gestão Pública Tributária pela Fundação Dom Cabral (FDC). Professor de Direito Tributário no Insper, FIPECAFI, IBDT e IBET. Auditor Fiscal e Assessor Especial da Secretaria Municipal da Fazenda de São Paulo. Representante de São Paulo na Câmara Técnica Permanente (CTP) da Associação Brasileira das Secretarias de Finanças das Capitais (ABRASF). Membro do Conselho de Altos Estudos de Finanças e Tributação (CAEFT) da Associação Comercial de São Paulo (ACSP).</div>
                 </div>
               </div>
@@ -422,6 +472,7 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
           </div>
           <h3 class="title-schedule pt-2 fw-semibold fst-italic mb-0 mx-0 px-0 pb-2">18h - ENCERRAMENTO</h3>
         </div>
+      </div>
     </section>
   </main>
   <!-- ======= Footer ======= -->
@@ -447,9 +498,10 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js?v=1.0.1"></script>
+  <script src="assets/js/main.js?v=1.0.2"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script>

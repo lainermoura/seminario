@@ -71,7 +71,7 @@
     if (!header.classList.contains('header-scrolled')) {
       offset -= 16
     }
-    
+
     let elementPos = select(el).offsetTop
     window.scrollTo({
       top: elementPos - offset,
@@ -290,6 +290,33 @@ accordions.forEach(function(accordion) {
   //     clickable: true
   //   }
   // });
+
+  /**
+   * Slider
+   */
+  new Swiper('.swiper', {
+    speed: 1800,
+    loop: true,
+    slidesPerView: 3,
+    slidesPerGroup: 3,
+    grid: {
+      rows: 1,
+    },
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+  
 
   /**
    * Animation on scroll
